@@ -1,0 +1,117 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>You're Amazing! Beta</title>  
+    <script src="https://cdn.tailwindcss.com"></script>  
+    <style>  
+        audio {  
+            display: none;  
+        }  
+    </style>  
+</head>  
+<body class="bg-blue-100 flex flex-col items-center justify-center min-h-screen">  
+    <h1 class="text-4xl font-bold mb-4">You Can Anything Betu! 🎉</h1>  
+    <p class="text-xl text-center max-w-xl mb-6">  
+        "अब कूद पड़े हैं दरिया में तो तैरेंगे या डूबेंगे, डर छोड़ दिया है कश्ती में, अब तो बस हिम्मत बाकी है..✌️🚩"  
+    </p>  
+    
+    <button id="playButton" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-700 mb-4">  
+        Play Poem  
+    </button>  
+    <audio id="poemAudio" src="mpp.mp3"></audio>  
+
+    <h2 class="text-2xl font-bold mb-4">Here’s a Poem for You:</h2>  
+    <blockquote class="text-lg text-center max-w-xl mb-6">  
+        <p>मैं शून्य पे सवार हूँ 🚀<br>  
+        बेअदब सा मैं खुमार हूँ 🌌<br>  
+        अब मुश्किलों से क्या डरूं 💪<br>  
+        मैं खुद कहर हज़ार हूँ 🔥<br>  
+        मैं शून्य पे सवार हूँ 🚀</p>  
+        <p>उंच-नीच से परे 🌈<br>  
+        मजाल आँख में भरे 👀<br>  
+        मैं लड़ रहा हूँ रात से 🌙<br>  
+        मशाल हाथ में लिए 🔦<br>  
+        न सूर्य मेरे साथ है ☀️<br>  
+        तो क्या नयी ये बात है? ❓<br>  
+        वो शाम होता ढल गया 🌅<br>  
+        वो रात से था डर गया 🌒<br>  
+        मैं जुगनुओं का यार हूँ ✨<br>  
+        मैं शून्य पे सवार हूँ 🚀</p>  
+        <p>भावनाएं मर चुकीं 💔<br>  
+        संवेदनाएं खत्म हैं 😐<br>  
+        अब दर्द से क्या डरूं 😣<br>  
+        ज़िन्दगी ही ज़ख्म है 🌪️<br>  
+        मैं बीच रह की मात हूँ ⚓<br>  
+        बेजान-स्याह रात हूँ 🌌<br>  
+        मैं काली का श्रृंगार हूँ 🌑<br>  
+        मैं शून्य पे सवार हूँ 🚀</p>  
+        <p>हूँ राम का सा तेज मैं 🔥<br>  
+        लंकापति सा ज्ञान हूँ 📚<br>  
+        किस की करूं आराधना 🤲<br>  
+        सब से जो मैं महान हूँ 🏆<br>  
+        ब्रह्माण्ड का मैं सार हूँ 🌌<br>  
+        मैं जल-प्रवाह निहार हूँ 💧<br>  
+        मैं शून्य पे सवार हूँ 🚀</p>  
+    </blockquote>  
+
+    <button id="surpriseButton" class="bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-700 mb-4">  
+        Surprise Me!  
+    </button>  
+    <div id="surpriseContent" class="hidden text-center">  
+        <center>
+        <img src="anupama.jpg" alt="Celebration" class=" w-1/2 h=100 mb-4">  
+    </center>
+        <p class="text-lg font-bold">You are truly amazing! Betu 🎊</p>  
+        <audio id="surpriseAudio" src="ReelAudio-63959.mp3"></audio>  
+        
+        <h2 class="text-2xl font-bold mb-4">Your are my hapiness</h2>  
+        <blockquote class="text-lg text-center max-w-xl mb-6">  
+            <p>क्या रो रहे तुम भी भला,<br>  
+            एक हार को सिर पर लिए..<br>  
+            क्या बादलों का धुँध,<br>  
+            सारे आसमान में छाएगा।</p>  
+        </blockquote>  
+
+        <button id="videoButton" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 mb-4">  
+            Wants to see my Kallu? Click here  
+        </button>  
+        <video id="kalluVideo" class="hidden" controls>  
+            <source src="kalu.mp4" type="video/mp4">  
+            Your browser does not support the video tag.  
+        </video>  
+    </div>  
+
+    <script>  
+        let currentAudio = null; // Variable to keep track of the currently playing audio  
+
+        function playAudio(audio) {  
+            if (currentAudio && currentAudio !== audio) {  
+                currentAudio.pause(); // Stop the currently playing audio  
+                currentAudio.currentTime = 0; // Reset the audio to the beginning  
+            }  
+            audio.play();  
+            currentAudio = audio; // Update the current audio  
+        }  
+
+        document.getElementById('playButton').onclick = function() {  
+            const audio = document.getElementById('poemAudio');  
+            playAudio(audio);  
+        };  
+
+        document.getElementById('surpriseButton').onclick = function() {  
+            const surpriseContent = document.getElementById('surpriseContent');  
+            const surpriseAudio = document.getElementById('surpriseAudio');  
+            surpriseContent.classList.toggle('hidden');  
+            playAudio(surpriseAudio);  
+        };  
+
+        document.getElementById('videoButton').onclick = function() {  
+            const video = document.getElementById('kalluVideo');  
+            video.classList.toggle('hidden');  
+            video.play();  
+        };  
+    </script>  
+</body>  
+</html>
